@@ -114,17 +114,72 @@ new_img=np.zeros((512,512,3))
 ###########################################################
 
 ## 10. Drawing circle in OpenCV Events
-def draw(events,x,y,flags,params):
-    if events==0:
-        cv2.circle(new_img,center=(x,y),radius=30,color=(0,255,0),thickness=1)
-cv2.namedWindow(winname='window')
-cv2.setMouseCallback(window_name='window',on_mouse=draw)
+# def draw(events,x,y,flags,params):
+#     if events==0:
+#         # cv2.rectangle(new_img,pt1=(x,y),pt2=(x+50,y+50),color=(100,0,0),thickness=1)
+#         cv2.circle(new_img,center=(x,y),radius=30,color=(0,255,0),thickness=1)
+# cv2.namedWindow(winname='window')
+# cv2.setMouseCallback(window_name='window',on_mouse=draw)
 
+# while True:
+#     cv2.imshow('window',new_img)
+#     if cv2.waitKey(1) & 0xFF==ord('x'):
+#         break
+# cv2.destroyAllWindows()
+
+###########################################################
+
+## 11. Drawing rectangle by clicking and dragging
+# flag=False
+# ix=-1
+# iy=-1
+# def draw(events,x,y,flags,params):
+#     global flag,ix,iy
+#     if events==1:                  # mouse down click
+#         flag=True
+#         ix=x
+#         iy=y
+#     elif events==0:                # mouse drag
+#         if flag==True:
+#             cv2.rectangle(new_img,pt1=(ix,iy),pt2=(x,y),color=(0,255,255),thickness=-1)
+#     elif events==4:                # mouse up click
+#         flag=False
+#         cv2.rectangle(new_img,pt1=(ix,iy),pt2=(x,y),color=(0,255,255),thickness=-1)
+
+# cv2.namedWindow(winname='window')
+# cv2.setMouseCallback(window_name='window',on_mouse=draw)
+
+# while True:
+#     cv2.imshow('window',new_img)
+#     if cv2.waitKey(1) & 0xFF==ord('x'):
+#         break
+# cv2.destroyAllWindows()
+
+###########################################################
+
+## 12. Building a cropping tool
+dp_img= cv2.imread('Shahrukh.jpg')
+dp_img= cv2.resize(dp_img,dsize=(500,500))
 while True:
-    cv2.imshow('window',new_img)
+    cv2.imshow('window',dp_img)
     if cv2.waitKey(1) & 0xFF==ord('x'):
         break
 cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
