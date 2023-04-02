@@ -158,15 +158,66 @@ new_img=np.zeros((512,512,3))
 ###########################################################
 
 ## 12. Building a cropping tool
-dp_img= cv2.imread('Shahrukh.jpg')
-dp_img= cv2.resize(dp_img,dsize=(500,500))
+# dp_img= cv2.imread('Shahrukh.jpg')
+# dp_img= cv2.resize(dp_img,dsize=(500,500))
+
+# flag=False
+# ix=-1
+# iy=-1
+# def crop(event,x,y,flags,params):
+#     global flag,ix,iy
+#     if event==1:                    # mouse down click
+#         flag=True
+#         ix=x
+#         iy=y
+#     # elif event==0:
+#     #     if flag==True:                  # mouse dragging
+#     #         cv2.rectangle(dp_img,pt1=(ix,iy),pt2=(x,y),color=(0,0,0),thickness=1)
+#     elif event==4:
+#         flag=False
+#         cv2.rectangle(dp_img,pt1=(ix,iy),pt2=(x,y),color=(0,0,0),thickness=1)
+
+#         #cropping tool
+#         fx=x
+#         fy=y
+#         cropped=dp_img[iy:fy,ix:fx]
+#         cv2.imshow('new_window',cropped)
+#         cv2.waitKey(0)
+
+# cv2.namedWindow(winname='window')
+# cv2.setMouseCallback(window_name='window',on_mouse=crop)
+
+
+# while True:
+#     cv2.imshow('window',dp_img)
+#     if cv2.waitKey(1) & 0xFF==ord('x'):
+#         break
+# cv2.destroyAllWindows()
+
+###########################################################
+
+## 13. Working with videos (loading coloured video)
+# cap= cv2.VideoCapture(0)
+# while True:
+#     ret,frame=cap.read()
+#     cv2.imshow('webcam',frame)
+
+#     if cv2.waitKey(1) & 0xFF==ord('x'):
+#         break
+# cv2.destroyAllWindows()
+
+###########################################################
+
+## 14. Working with videos (loading B&W video)
+cap= cv2.VideoCapture(0)
 while True:
-    cv2.imshow('window',dp_img)
+    ret,frame=cap.read()
+    video_grey= cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    cv2.imshow('webcam',video_grey)
+
     if cv2.waitKey(1) & 0xFF==ord('x'):
         break
 cv2.destroyAllWindows()
-
-
 
 
 
