@@ -209,21 +209,52 @@ new_img=np.zeros((512,512,3))
 ###########################################################
 
 ## 14. Working with videos (loading B&W video)
-cap= cv2.VideoCapture(0)
-while True:
-    ret,frame=cap.read()
-    video_grey= cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    cv2.imshow('webcam',video_grey)
+# cap= cv2.VideoCapture(0)
+# while True:
+#     ret,frame=cap.read()
+#     video_grey= cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+#     video= cv2.cvtColor(frame,cv2.COLOR_BGR2XYZ)
+#     cv2.imshow('webcam',video)
 
-    if cv2.waitKey(1) & 0xFF==ord('x'):
-        break
-cv2.destroyAllWindows()
+#     if cv2.waitKey(1) & 0xFF==ord('x'):
+#         break
+# cv2.destroyAllWindows()
 
+###########################################################
 
+## 15. Working with videos (Saving a video)
+# cap= cv2.VideoCapture(0)
+# fourcc = cv2.VideoWriter_fourcc(*'XVID')
+# out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))
 
+# while True:
+#     ret,frame=cap.read()
+#     out.write(frame)
+#     video_grey= cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+#     cv2.imshow('webcam',video_grey)
 
+#     if cv2.waitKey(1) & 0xFF==ord('x'):
+#         break
+# out.release()
+# cv2.destroyAllWindows()
 
+###########################################################
 
+## 16. Working with videos (Playing a video)
+# import time
+
+# cap= cv2.VideoCapture("output.avi")
+# while True:
+#     ret,frame=cap.read()
+#     time.sleep(1/50)
+#     video_grey= cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+#     cv2.imshow('webcam',video_grey)
+
+#     if cv2.waitKey(1) & 0xFF==ord('x'):
+#         break
+# cv2.destroyAllWindows()
+
+###########################################################
 
 
 
